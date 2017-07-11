@@ -1,0 +1,22 @@
+{
+  "require": {
+    "php": "^7.0",
+    "ext-pdo": "*",
+    "doctrine/dbal": "~2.5",
+    "prooph/event-sourcing": "~4.0",
+    "prooph/event-store": "^6.0",
+    "prooph/event-store-bus-bridge": "^2.0",
+    "prooph/event-store-doctrine-adapter": "^3.0",
+    "prooph/service-bus": "~5.0",
+    "moneyphp/money": "^3.0",
+    "esky/enum": "^1.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "": "src/"
+    }
+  },
+  "require-dev": {
+    "symfony/var-dumper": "^3.3"
+  }
+}

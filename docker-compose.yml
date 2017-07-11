@@ -1,0 +1,30 @@
+version: '2'
+
+services:
+  web:
+    build: .
+    ports:
+      - 6000:80
+    volumes:
+      - .:/var/www/html
+    environment:
+      - DB_DRIVER=mysql
+      - DB_HOST=mysql
+      - DB_USER=user
+      - DB_PASSWORD=userpass
+      - DB_NAME=workshop
+      - DB_PORT=3306
+  mysql:
+    image: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=workshop
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=userpass
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    environment:
+     - PMA_ARBITRARY=1
+    restart: always
+    ports:
+     - 6001:80
